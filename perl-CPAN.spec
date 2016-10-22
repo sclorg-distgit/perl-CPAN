@@ -4,7 +4,7 @@
 
 Name:           %{?scl_prefix}perl-CPAN
 Version:        2.11
-Release:        367%{?dist}
+Release:        368%{?dist}
 Summary:        Query, download and build perl modules from CPAN sites
 License:        GPL+ or Artistic
 Group:          Development/Libraries
@@ -226,6 +226,9 @@ find $RPM_BUILD_ROOT -type f -name .packlist -exec rm -f {} \;
 %{_mandir}/man3/*
 
 %changelog
+* Sun Jul 24 2016 Petr Pisar <ppisar@redhat.com> - 2.11-368
+- Rebuild without bootstrap
+
 * Tue Jul 12 2016 Petr Pisar <ppisar@redhat.com> - 2.11-367
 - SCL
 
