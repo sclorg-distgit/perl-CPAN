@@ -24,7 +24,7 @@ diff --git a/lib/CPAN/FirstTime.pm b/lib/CPAN/FirstTime.pm
 index 531c115..8d82795 100644
 --- a/lib/CPAN/FirstTime.pm
 +++ b/lib/CPAN/FirstTime.pm
-@@ -2137,6 +2137,24 @@ sub _print_urllist {
+@@ -2068,6 +2068,24 @@ sub _print_urllist {
  }
  
  sub _can_write_to_libdirs {
