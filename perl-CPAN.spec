@@ -12,7 +12,7 @@
 
 Name:           %{?scl_prefix}perl-CPAN
 Version:        2.27
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Query, download and build perl modules from CPAN sites
 License:        GPL+ or Artistic
 URL:            https://metacpan.org/release/CPAN
@@ -209,7 +209,6 @@ Requires:       %{?scl_prefix}perl(Module::Build)
 %endif
 Requires:       %{?scl_prefix}perl(Pod::Perldoc)
 %if ! %{defined perl_bootstrap}
-Requires:       %{?scl_prefix}perl(Term::ReadKey)
 Requires:       %{?scl_prefix}perl(Text::Glob)
 # Text::Levenshtein::XS or Text::Levenshtein::Damerau::XS or Text::Levenshtein
 # or Text::Levenshtein::Damerau::PP
@@ -264,6 +263,9 @@ unset AUTHOR_TEST CPAN_EXPECT_TIMEOUT CPAN_RUN_SHELL_TEST_WITHOUT_EXPECT \
 %{_mandir}/man3/*
 
 %changelog
+* Wed Jan 08 2020 Jitka Plesnikova <jplesnik@redhat.com> - 2.27-5
+- Remove optional requires perl(Term::ReadKey)
+
 * Tue Jan 07 2020 Jitka Plesnikova <jplesnik@redhat.com> - 2.27-4
 - Re-rebuild of bootstrapped packages
 
