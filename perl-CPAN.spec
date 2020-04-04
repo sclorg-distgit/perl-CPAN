@@ -4,7 +4,7 @@
 # (Socket::inet_aton('pool.sks-keyservers.net')).
 %bcond_with perl_CPAN_enables_gnupg_test
 # Run optional test
-%if ! (0%{?rhel}) || ! (0%{?scl:1})
+%if ! (0%{?rhel}) && ! (0%{?scl:1})
 %bcond_without perl_CPAN_enables_optional_test
 %else
 %bcond_with perl_CPAN_enables_optional_test
@@ -12,7 +12,7 @@
 
 Name:           %{?scl_prefix}perl-CPAN
 Version:        2.27
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Query, download and build perl modules from CPAN sites
 License:        GPL+ or Artistic
 URL:            https://metacpan.org/release/CPAN
@@ -264,6 +264,9 @@ unset AUTHOR_TEST CPAN_EXPECT_TIMEOUT CPAN_RUN_SHELL_TEST_WITHOUT_EXPECT \
 %{_mandir}/man3/*
 
 %changelog
+* Tue Jan 07 2020 Jitka Plesnikova <jplesnik@redhat.com> - 2.27-4
+- Re-rebuild of bootstrapped packages
+
 * Fri Dec 20 2019 Jitka Plesnikova <jplesnik@redhat.com> - 2.27-3
 - SCL
 
