@@ -12,7 +12,7 @@
 
 Name:           %{?scl_prefix}perl-CPAN
 Version:        2.27
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Query, download and build perl modules from CPAN sites
 License:        GPL+ or Artistic
 URL:            https://metacpan.org/release/CPAN
@@ -263,6 +263,9 @@ unset AUTHOR_TEST CPAN_EXPECT_TIMEOUT CPAN_RUN_SHELL_TEST_WITHOUT_EXPECT \
 %{_mandir}/man3/*
 
 %changelog
+* Wed Jan 15 2020 Jitka Plesnikova <jplesnik@redhat.com> - 2.27-6
+- Updated patches to prevent patch leftovers
+
 * Wed Jan 08 2020 Jitka Plesnikova <jplesnik@redhat.com> - 2.27-5
 - Remove optional requires perl(Term::ReadKey)
 
