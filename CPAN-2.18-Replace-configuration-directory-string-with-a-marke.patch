@@ -22,7 +22,7 @@ diff --git a/Makefile.PL b/Makefile.PL
 index 2cd2f82..3b826cf 100644
 --- a/Makefile.PL
 +++ b/Makefile.PL
-@@ -339,21 +339,21 @@ record-session :
+@@ -353,21 +353,21 @@ record-session :
  	$(PERL) -Ilib -MCPAN -e '$$CPAN::Suppress_readline=$$CPAN::Echo_readline=1;shell' | tee ttt.out
  
  run-with-sqlite :
@@ -80,7 +80,7 @@ index aaf3101..2618d71 100644
      search path of the CPAN module before the use() or require() statements.
      The mkmyconfig command writes this file for you.
  
-@@ -1996,8 +1996,8 @@ FAQ
+@@ -2043,8 +2043,8 @@ FAQ
  
          You may want to configure something like
  
@@ -95,7 +95,7 @@ diff --git a/lib/CPAN.pm b/lib/CPAN.pm
 index 4f02850..2c117b4 100644
 --- a/lib/CPAN.pm
 +++ b/lib/CPAN.pm
-@@ -1745,7 +1745,7 @@ restarting the whole get/make/test/install procedure from scratch.
+@@ -1771,7 +1771,7 @@ restarting the whole get/make/test/install procedure from scratch.
  
  =item Lockfile
  
@@ -104,7 +104,7 @@ index 4f02850..2c117b4 100644
  Batch jobs can run without a lockfile and not disturb each other.
  
  The shell offers to run in I<downgraded mode> when another process is
-@@ -1819,7 +1819,7 @@ C<install_tested>.
+@@ -1845,7 +1845,7 @@ C<install_tested>.
  
  =head2 mkmyconfig
  
@@ -113,7 +113,7 @@ index 4f02850..2c117b4 100644
  directory so that you can save your own preferences instead of the
  system-wide ones.
  
-@@ -2034,7 +2034,7 @@ in a file CPAN/Config.pm.
+@@ -2060,7 +2060,7 @@ in a file CPAN/Config.pm.
  
  Default values defined in the CPAN/Config.pm file can be
  overridden in a user specific file: CPAN/MyConfig.pm. Such a file is
@@ -122,7 +122,7 @@ index 4f02850..2c117b4 100644
  added to the search path of the CPAN module before the use() or
  require() statements. The mkmyconfig command writes this file for you.
  
-@@ -3729,8 +3729,8 @@ there is too much output to keep track of.
+@@ -3803,8 +3803,8 @@ there is too much output to keep track of.
  
  You may want to configure something like
  
@@ -137,7 +137,7 @@ diff --git a/lib/CPAN/HandleConfig.pm b/lib/CPAN/HandleConfig.pm
 index c72439f..a6b92e8 100644
 --- a/lib/CPAN/HandleConfig.pm
 +++ b/lib/CPAN/HandleConfig.pm
-@@ -538,7 +538,7 @@ sub cpan_home_dir_candidates {
+@@ -544,7 +544,7 @@ sub cpan_home_dir_candidates {
      push @dirs, $ENV{USERPROFILE} if $ENV{USERPROFILE};
  
      $CPAN::Config->{load_module_verbosity} = $old_v;
